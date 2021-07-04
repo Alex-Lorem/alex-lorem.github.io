@@ -1,0 +1,61 @@
+.features__container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+}
+.features__item{
+    text-align: center;
+    width: 270px;
+    height: 400px;
+    box-shadow: 0px 24px 48px rgba(0, 24, 52, 0.080899);
+    border-radius: 100px 24px 24px 24px;
+    &:nth-child(1){
+        .features__circle{ 
+            background: linear-gradient(180deg, #FFF0EC 0%, #FFDDD4 100%);
+        }
+    }
+    &:nth-child(2){
+        margin: 30px 30px 0 30px;
+        .features__circle{
+            background: linear-gradient(180deg, #E4FFFC 0%, #C5FFF8 100%);
+        }
+    }
+    &:nth-child(3){
+        .features__circle{ 
+            background: linear-gradient(180deg, #FFF8EC 0%, #FFEFD4 100%);
+        }
+    }
+}
+.features__circle{
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -25px;
+    position: relative;
+}
+.apple{
+    width: 56px;
+    height: 64px;
+}
+.motorcycle{
+    width: 64px;
+    height: 56px;
+}
+.hat{
+    width: 64px;
+    height: 64px;
+}
+.features__title{
+    font-family: 'Elsie-Black';
+    font-size: 24px;
+    line-height: 32px;
+}
+.features__subtitle{
+    color: #33333380;
+    line-height: 32px;
+    margin: 15px 30px;
+}

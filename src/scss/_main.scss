@@ -1,0 +1,91 @@
+
+
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    font-size: $baseFont;
+    font-family: $baseFamily;
+    color: $baseColor;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+    @include tablets{
+        font-size: $baseFont - 1px;
+    }    
+    @include phones{
+        font-size: $baseFont - 2px; 
+    }
+}
+.overflow-disactive{overflow-y: scroll;}
+.body{
+        overflow: hidden;
+}
+.wrapper{
+     overflow: hidden;
+}
+a{
+    color: $baseColor;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+h1{
+    font-size: 72px;
+    font-family: 'Elsie-Black';
+}
+h2{
+    font-size: 56px;
+    text-align: center;
+    font-family: 'Elsie-Black';
+}
+h3{
+    color: #EF633E;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 23px;
+}
+.subtitle{
+    font-size: 16px;
+    margin-top: 11px;
+    max-width: 470px;
+    text-align: center;
+    line-height: 32px;
+}
+.button-go{
+    font-family: 'Elsie-Black';
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 15px 30px;
+    background: linear-gradient(180deg, #96E4DD 0%, #5DC4B8 100%);
+    border-radius: 12px;
+    max-width: 165px;
+    transition: all .5s ease;
+}
+.button-link{
+    text-transform: uppercase;
+    color: #5DC4B8;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #5DC4B8;
+    border-radius: 15px;
+    font-family: 'Elsie-Black';
+    transition: all .5s ease;
+}
+
+.coziness{
+    height: 100vh;
+    width: 100vh;
+}

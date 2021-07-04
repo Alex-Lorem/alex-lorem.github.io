@@ -1,6 +1,9 @@
 const {src, dest, task, series, watch, parallel} = require("gulp");
 const rm = require('gulp-rm');
-const sass = require('gulp-sass');
+
+const sass = require('gulp-sass')(require('sass'));
+sass.compiler = require('node-sass');
+
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
@@ -22,9 +25,6 @@ const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require("gulp-imagemin");
 const extReplace = require("gulp-ext-replace");
 const webp = require("imagemin-webp");
-
-sass.compiler = require('node-sass');
-
 
 
 
@@ -126,7 +126,7 @@ task(
     watch(`${SRC_PATH}/index.html`, series("copy:html"));
     watch(`${SRC_PATH}/*.php`, series("copy:php"));
     watch(`${SRC_PATH}/img/**`, series("copy:img"));
-    watch(`${SRC_PATH}/*.svg`, series("copy:svg"));
+    watch(`${SRC_PATH}/img/*.svg`, series("copy:svg"));
     watch(FONTS_PATH, series("copy:fonts"));
     watch(JS_LIBS, series("scripts"));
 });

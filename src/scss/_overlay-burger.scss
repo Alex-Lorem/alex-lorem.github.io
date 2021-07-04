@@ -1,0 +1,99 @@
+.contact__overlay{
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    backdrop-filter: blur(7px);
+    align-items: center;
+    justify-content: center;
+    transition: all 2s ease;
+}
+.contact__overlay--active{
+    display: flex;
+    animation: drop 2s ease;
+    animation-fill-mode: forwards;
+    @keyframes drop{
+        0%{top: -100vh}
+        100%{top: 0vh}
+    }
+}
+.contact__overlay--disappearence{
+    animation: dis 2s ease;
+    animation-fill-mode: forwards;
+    @keyframes dis{
+        0%{top: 0vh}
+        100%{top: -100vh}
+    }
+}
+.contact__block{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    height: 300px;
+    border: 1px solid #EF633E;
+    border-radius: 20px;
+    background: linear-gradient(133.44deg, #FCEEE9 17.94%, #ECF8F8 85.2%);
+    h3{
+        padding: 0 50px
+    }
+    input{
+    overflow: hidden;
+    background: transparent;
+    border: 1px solid #EF633E;
+    height: 30px;
+    border-radius: 8px;
+    outline: none;
+    padding-left: 10px;
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+    }
+}
+.smile{
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+.contact__close{
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    width: 25px;
+    height: 25px;
+    
+    &:hover{
+        .line-1{background:#EF633E}
+        .line-2{background:#EF633E}
+    }
+}
+.line-1{
+    width: 30px;
+    height: 6px;
+    border: 1px solid #EF633E;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 30%;
+    right: 0%;
+    border-radius: 5px;
+    background: linear-gradient(133.44deg, #FCEEE9 17.94%, #ECF8F8 85.2%);
+    z-index: 10;
+    transition: all .5s ease;
+}
+.line-2{
+    width: 30px;
+    height: 6px;
+    border: 1px solid #EF633E;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 30%;
+    right: 0%;
+    border-radius: 5px;
+    transition: all .5s ease;
+    
+}

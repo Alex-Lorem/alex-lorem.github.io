@@ -1,0 +1,27 @@
+.app{
+    margin-top: 150px;
+    align-items: flex-start;
+}
+.app_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 1400px;
+    width: 100%;
+    max-height: 600px;
+    background: linear-gradient(135deg, #FCEEE9 0%, #ECF8F8 100%);
+    border-radius: 0px 24px 100px 0px;
+}
+.app__content{
+    max-width: 370px;
+    margin-top: 90px;
+    h3{text-align: left}
+    h2{text-align: left}
+    .subtitle{text-align: left;margin-top: 30px;}
+}
+.app__buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 35px;
+}
