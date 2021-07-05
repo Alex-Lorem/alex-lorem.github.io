@@ -11,6 +11,8 @@
 .video{
     position: relative;
     margin-left: 15px;
+    max-width: 600px;
+    width: 100%;
     &:hover{
         .play{
             transition: all .7s ease;
@@ -61,5 +63,5 @@
     margin: 0 auto;
     flex-direction: row-reverse;
     padding: 180px 10px;
-    
+    overflow: hidden;
 }

@@ -6,6 +6,7 @@
     bottom: 50px;
 }
 .reviews__slider{
+    margin-top: 70px;
     width: 1080px;
     overflow: hidden;
     height: 500px;
@@ -15,7 +16,7 @@
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
-    width: 270px;
+    max-width: 270px;
     height: 370px;
     box-shadow: 0px 24px 48px rgba(0, 24, 52, 0.080899);
     border-radius: 100px 24px 24px 24px;

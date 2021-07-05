@@ -1,6 +1,5 @@
 .slider{
     margin-top: 250px;
-    padding-left: 150px;
     align-items: flex-end;
     img{
     width: 100%;
@@ -9,21 +8,20 @@
 }
 
 .slider__content{
-    max-width: 1400px;
-    width: 100%;
+    width: 85%;
     height: 590px;
     background: linear-gradient(135deg, #FCEEE9 0%, #ECF8F8 100%);
     border-radius: 100px 0px 0px 24px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding-left: calc(20% - 200px);
-    padding-right: calc(20% - 200px);
+    justify-content: center;
+    padding-right: 50px;
+    
 }
 .slider__text{
     max-width: 260px;
     margin-top: 100px;
-    padding-left: 20px;
+    margin-left: 30px;
     h3{text-align: left;}
     h2{text-align: left;}
     .subtitle{text-align: left;margin-top: 30px;}
@@ -34,10 +32,11 @@
     height: 100%;
 }
 .slider__item{
-    width: 100%;
+    width: 770px;
     height: 590px;
     position: relative;
     top: -50px;
+    right: 20px;
     background: #EF633E;
     border-radius: 100px 24px 24px 24px;
     overflow: hidden;

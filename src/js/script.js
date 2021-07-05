@@ -1,4 +1,5 @@
  window.onload = function () {
+     let window_Width = window.innerWidth ? window.innerWidth : $(window).width();
      //preloader
      
      let preloader = $('.preloader');
@@ -128,13 +129,34 @@
      
      //show full menu
      
-     const menuHeightDefault = parseInt($('.menu__wrapper').css('height'));
      
+     let menuItemsList = document.querySelector('.menu__wrapper').children.length;
+     let menuItemHeight = document.querySelector('.menu__item').offsetHeight;
+     let rowHeight = 380;
+     let columns = 3;
+     let gap = 65;
+     let shadow = 55;
+     let menuHeightDefault = menuItemHeight + shadow;
+     
+     if(window_Width >= 950){
+         columns = 3
+         menuItemsList /= 3;
+     } 
+     if(window_Width < 950){
+         gap = 60;
+         columns = 2
+         menuItemsList /= 2;
+     }
+     
+     
+     document.documentElement.style.setProperty('--height', menuHeightDefault + 'px'); 
+     document.documentElement.style.setProperty('--col', columns); 
+     document.documentElement.style.setProperty('--gap', gap + 'px');
+     document.documentElement.style.setProperty('--rowHeight', rowHeight + 'px');
+     document.documentElement.style.setProperty('--rows', Math.floor(menuItemsList));
+    
      $('#showMenu').click(e =>{
         e.preventDefault();
-        let menuHeightActive = parseInt($('.menu__wrapper').css('height'));
-        let menuItemHeight = document.querySelector('.menu__item').scrollHeight;
-        let shadow = 48;
         
         if($('.menu__wrapper').hasClass('menu__wrapper--active')){
             
@@ -142,7 +164,7 @@
         $('.menu__wrapper').removeClass('menu__wrapper--active');
         }
         else{
-            menuHeightActive = menuItemHeight * 2 + shadow + 70;
+            let menuHeightActive = rowHeight * menuItemsList + gap * menuItemsList;
             document.querySelector('.menu__wrapper').style.height = menuHeightActive + 'px';
             $('.menu__wrapper').addClass('menu__wrapper--active');
         }

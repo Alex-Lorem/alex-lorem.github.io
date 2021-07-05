@@ -36,7 +36,8 @@
     <div class="wrapper">
         <section class="first">
             <div class="circle"></div>
-            <div class="video"><a href="" class="play"><svg class="triangle" stroke="#000000" fill-opacity="0.85" stroke-opacity="1" stroke-width="0.6"><use xlink:href="./img/sprite.svg#triangle"></use></svg></a><img src="./img/video.png" alt=""></div>
+            <div class="video"><a href="" class="play"><svg class="triangle" stroke="#000000" fill-opacity="0.85" stroke-opacity="1" stroke-width="0.6"><use xlink:href="./img/sprite.svg#triangle"></use></svg></a><div class="img--wrapper"><img src="./img/video.png" alt=""></div>
+            </div>
             <div class="first__content">
                 <h3>Food Market</h3>
                 <h1>Welcome to Food Market</h1>
@@ -71,7 +72,7 @@
         </section>
         <section class="about">
             <div class="about__container">
-                <img src="./img/about.png" alt="" style="height: 100%;top: -35px;position: relative;">
+                <div class="img--wrapper"><img src="./img/about.png" alt=""></div>
                 <div class="about__right">
                     <h3>About Us</h3>
                     <h2>Most Biggest Food Market</h2>
@@ -110,7 +111,7 @@
             <div class="subtitle">The sky was cloudless and of a deep dark blue. The spectacle before us was indeed sublime.</div>
             <div class="menu__wrapper">
             <div class="menu__item">
-                <div class="img--wrapper">
+                <div class="menu__img--wrapper">
                     <img src="./img/item-1.png" alt="">
                 </div>
                 <div class="menu__text--wrapper">
@@ -130,7 +131,7 @@
                 </div>
             </div>
             <div class="menu__item">
-                <div class="img--wrapper">
+                <div class="menu__img--wrapper">
                     <img src="./img/item-2.png" alt="">
                 </div>
                 <div class="menu__text--wrapper">
@@ -150,7 +151,7 @@
                 </div>
             </div>
             <div class="menu__item">
-                <div class="img--wrapper">
+                <div class="menu__img--wrapper">
                     <img src="./img/item-3.png" alt="">
                 </div>
                 <div class="menu__text--wrapper">
@@ -170,7 +171,7 @@
                 </div>
             </div>
             <div class="menu__item">
-                <div class="img--wrapper">
+                <div class="menu__img--wrapper">
                     <img src="./img/item-4.png" alt="">
                 </div>
                 <div class="menu__text--wrapper">
@@ -190,7 +191,7 @@
                 </div>
             </div>
             <div class="menu__item">
-                <div class="img--wrapper">
+                <div class="menu__img--wrapper">
                     <img src="./img/item-5.png" alt="">
                 </div>
                 <div class="menu__text--wrapper">
@@ -210,7 +211,7 @@
                 </div>
             </div>
             <div class="menu__item">
-                <div class="img--wrapper">
+                <div class="menu__img--wrapper">
                     <img src="./img/item-6.png" alt="">
                 </div>
                 <div class="menu__text--wrapper">
@@ -276,11 +277,11 @@
            </div>
             
             <div class="slider__container">
-                    <div class="slider__item"><img src="./img/slider-item-1.png" alt=""></div>
-                    <div class="slider__item"><img src="./img/slider-item-2.png" alt=""></div>
-                    <div class="slider__item"><img src="./img/slider-item-3.png" alt=""></div>
-                    <div class="slider__item"><img src="./img/slider-item-4.png" alt=""></div>
-                    <div class="slider__item"><img src="./img/slider-item-5.png" alt=""></div>
+                    <div><div class="slider__item"><img src="./img/slider-item-1.png" alt=""></div></div>
+                    <div><div class="slider__item"><img src="./img/slider-item-2.png" alt=""></div></div> 
+                    <div><div class="slider__item"><img src="./img/slider-item-3.png" alt=""></div></div> 
+                    <div><div class="slider__item"><img src="./img/slider-item-4.png" alt=""></div></div> 
+                    <div><div class="slider__item"><img src="./img/slider-item-5.png" alt=""></div></div> 
             </div>
                
            </div>
@@ -368,8 +369,8 @@
             </div>
         </section>
         <section class="app">
-            <div class="app_container">
-                <img src="./img/app.png" alt="" style="height: 100%;top: -35px;position: relative;">
+            <div class="app__container">
+                <div class="img--wrapper"><img src="./img/app.png" alt=""></div>
                 <div class="app__content">
                     <h3>Application</h3>
                     <h2>Download Our App</h2>
@@ -391,7 +392,20 @@
                 <div class="hours">9:00 am. – 8:00 pm.</div>
                 </div>
                 <div id="map-init">
-                    <iframe src="https://snazzymaps.com/embed/323255" width="100%" height="600px" style="border:none;"></iframe>
+<!--                    <iframe src="https://snazzymaps.com/embed/323255" width="100%" height="600px" style="border:none;"></iframe>-->
+               <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+		<div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div><script>(function () {
+        var setting = {"height":540,"width":803,"zoom":15,"queryString":"вулиця Авіаторів, 50, Петропавлівська Борщагівка, Київська обл., Украина, 08130","place_id":"ChIJ-yGw80LL1EAR1CKHdWIS6O4","satellite":false,"centerCoord":[50.43874889138236,30.328197558613592],"lang":"ru","cityUrl":"/ukraine/petropavlovskaya-borshchagovka-336726","cityAnchorText":"Карта [CITY1], Киевская область, Украина","id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"541560"};
+        var d = document;
+        var s = d.createElement('script');
+        s.src = 'https://1map.com/js/script-for-user.js?embed_id=541560';
+        s.async = true;
+        s.onload = function (e) {
+          window.OneMap.initMap(setting)
+        };
+        var to = d.getElementsByTagName('script')[0];
+        to.parentNode.insertBefore(s, to);
+      })();</script><a href="https://1map.com/ru/map-embed">1 Map</a></div>
                 </div>
             </div>
         </section>

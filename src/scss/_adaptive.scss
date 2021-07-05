@@ -1,0 +1,222 @@
+@media (max-width:1400px){
+    .slider{
+        
+        .slider__item{
+            width: 650px;
+            height: 500px;
+            top: -30px;
+        }
+        .slider__container{
+            width: 650px;
+        }
+    }
+} //media 1400
+@media (max-width:1100px){
+    .about{
+        .about__container{
+            max-height: 480px;
+        }
+        .about__right{
+            padding: 45px 0;
+        }
+    }
+    .menu{
+        .menu__wrapper{
+            justify-items: center;
+            grid-template-columns: repeat(var(--col), 300px);
+            
+        }
+        .menu__item{
+            width: 240px;
+            height: 355px;
+        }
+        .menu__img--wrapper{
+            width: 220px;
+            height: 210px;
+            right: 30px;
+        }
+        .menu__text--wrapper{
+            width: 240px;
+            height: 270px;
+        }
+    }
+    .slider{
+        .slider__item{
+            top: -10px;
+        }
+        .slider__content{
+            width: auto;
+        }
+    }
+    .reviews{
+        .reviews__slider{
+            max-width: 950px;
+            width: 100%;
+        }
+        .slick-slide {
+            margin-left:20px;
+            margin-right: 20px;
+          }
+    }
+}//media 1100
+
+@media(max-width:950px){
+    .first { 
+        .img--wrapper{
+            img{
+                width: 450px;
+                }
+            }
+        .circle{
+            right: -50%;
+            }
+        }
+    .features{
+        .features__item{
+            width: 230px;
+            .features__subtitle{
+                margin: 15px 15px;
+            } 
+        }
+    }
+    .about{
+        h2{
+            font-size: 2.5rem;
+        }
+        .about__container{
+            max-height:none;
+            max-width: 90%;
+        }
+        .img--wrapper{
+            img{width: 370px;}
+        }
+    }
+    .menu{
+        .menu__wrapper{
+            justify-items: center;
+            grid-template-columns: repeat(var(--col), 330px);
+            
+            
+        }
+        .menu__item{
+            width: 330px;
+            height: 380px;
+        }
+        .menu__img--wrapper{
+            width: 254px;
+            height: 224px;
+            right: 30px;
+        }
+        .menu__text--wrapper{
+            width: 270px;
+            height: 340px;
+        }
+    }
+    .slider{
+        .slider__content{
+            width: 90%;
+            height: auto;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            padding-bottom: 70px;
+        }
+        .slider__item{
+            top: 0;
+        }
+        .slider__text{
+            margin-left: 0;
+            margin-bottom: 50px;
+            //margin-left: calc(50% - 300px);
+            h3{
+                text-align: center;
+            }            
+            h2{
+                text-align: center;
+            }
+            .subtitle{
+                text-align: center;
+                margin: 30px 0;
+            }
+            .controls{
+                margin: 0 auto;
+            }
+        }
+    }
+     body{
+         .map{
+            margin-top: 100px;
+             #map-init{
+                 position: inherit;
+                 padding: 75px 0;
+             }
+         }
+    }
+    .reviews{
+        .reviews__slider{
+            max-width: 950px;
+            width: 100%;
+        }
+        .slick-slide {
+            margin-left:10px;
+            margin-right: 10px;
+          }
+        .reviews__photo{
+            right: 15px;
+        }
+    }
+    body{
+        .map{
+        align-items: center;
+        .map__container{
+            flex-direction: column;
+            align-items: center;
+        }
+        }}
+}//media 950
+
+@media(max-width:850px){
+    .first { 
+        .img--wrapper{
+            img{
+                width: 370px;
+                 }
+            }
+    }
+    .features{
+        .features__item{
+            width: 215px;
+        }
+    }
+    .about{
+        h2{
+            font-size: 2rem;
+        }
+    }
+    .explore{
+        .explore__item{
+            width: 150px;
+        }
+    }
+    .app{
+    .app__container{
+        margin: 0 auto;
+        flex-direction: column-reverse;
+        max-height: none;
+        align-items: center;
+        .img--wrapper{
+            max-width: 470px;
+            }
+        
+        h2{
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+        }
+        .subtitle{
+            text-align: center;
+        }
+        }
+    }
+}//media 850
