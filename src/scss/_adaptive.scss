@@ -114,14 +114,25 @@
     }
     .slider{
         .slider__content{
-            width: 90%;
+            width: 95%;
             height: auto;
             flex-direction: column;
             align-items: center;
             margin: 0 auto;
+            padding: 0;
             padding-bottom: 70px;
         }
+        .slider__container{
+            padding: 0;
+            max-width: 680px;
+            width: inherit;
+        }
+        .slick-slide{
+            margin: 0;
+        }
         .slider__item{
+            width: 100%;
+            right: 0;
             top: 0;
         }
         .slider__text{
@@ -165,17 +176,18 @@
             right: 15px;
         }
     }
-    body{
-        .map{
+    
+    body .map{
         align-items: center;
         .map__container{
             flex-direction: column;
             align-items: center;
         }
-        }}
+        }
 }//media 950
 
 @media(max-width:850px){
+    body{
     .first { 
         .img--wrapper{
             img{
@@ -196,6 +208,12 @@
     .explore{
         .explore__item{
             width: 150px;
+        }
+    }
+    .menu{
+        .circle{
+            top: 18%;
+            left: -55%;
         }
     }
     .app{
@@ -219,4 +237,163 @@
         }
         }
     }
+    footer {
+        .footer__content{
+            grid-template-columns: 30% 22% 22% 26%;
+        }
+    }
+  }
 }//media 850
+
+@include tablets{
+    .footer__content{
+    .fb{
+        width: 0.6rem;
+        height: 1.07rem;
+    
+        }
+    
+    .tw{
+        width: 1.07rem;
+        height: 0.867rem;
+      }
+    .inst{
+        width: 1.07rem;
+        height: 1.07rem;
+    }
+    }
+}
+@media(max-width:720px){
+    body .first{
+        flex-direction: column;
+        padding: 150px 10px 100px 10px;    
+        .img--wrapper img{
+            width: 100%;
+        }
+        .first__content{
+            padding: 0 20px;
+            margin-top: 75px;
+            margin-right: 0;
+            align-items: center;
+            h1{
+                text-align: center;
+            }
+            h3{
+                text-align: center;
+            }
+            .subtitle{
+                text-align: center;
+            }
+        }
+    }
+    .features{
+        .features__container{
+            flex-direction: column;
+            .features__item{
+                width: 280px;
+                margin: 0;
+                margin-top: 50px;
+                .features__subtitle{
+                    margin: 15px 30px;
+                }
+            }
+        }  
+    }
+    .about{
+        .about__container{
+            flex-direction: column;
+            margin: 0 auto;
+            .img--wrapper{
+                img{
+                    width: 100%;
+                }
+            }
+            .about__right{
+                margin: 0 auto;
+                text-align: center;
+                align-items: center;
+                h2{text-align: center;}
+            }
+        }
+    }
+}//media 720
+@media(max-width:680px){
+    body{
+         header{
+            display: none;
+        }
+         #burger{
+            display: block;
+        }
+         .adaptive__title{
+            display: block;
+        }
+         footer{
+            display: none;
+        }
+        .slider{
+            .slider__item{
+                height: 360px;
+            }
+        }
+        .menu{
+            .menu__item{
+            width: 240px;
+            height: 355px;
+        }
+        .menu__img--wrapper{
+            width: 220px;
+            height: 210px;
+            right: 30px;
+        }
+        .menu__text--wrapper{
+            width: 240px;
+            height: 270px;
+            }    
+        
+        .menu__wrapper{
+            justify-items: center;
+            grid-template-columns: repeat(var(--col), 270px);
+            
+            }
+        }
+    }
+}//media 680
+
+@media(max-width:550px){
+    .menu{
+        .menu__wrapper{
+            justify-items: center;
+            grid-template-columns: repeat(var(--col), 330px);
+            
+            
+        }
+        .menu__item{
+            width: 330px;
+            height: 380px;
+        }
+        .menu__img--wrapper{
+            width: 254px;
+            height: 224px;
+            right: 30px;
+        }
+        .menu__text--wrapper{
+            width: 270px;
+            height: 340px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
