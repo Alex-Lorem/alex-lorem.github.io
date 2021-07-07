@@ -13,8 +13,8 @@
          window.setTimeout(function () {$('.preloader__item-5').addClass('item--active')},2100)
          window.setTimeout(function () {$('.preloader__item-6').addClass('item--active')},2600)
          window.setTimeout(function () {$('.preloader__item-7').addClass('item--active')},3100)
-         window.setTimeout(function () {$('.preloader').addClass('disactivating')},6500)
-         window.setTimeout(function () {$('.preloader').addClass('deleting')},8100)
+         window.setTimeout(function () {$('.preloader').addClass('disactivating')},4500)
+         window.setTimeout(function () {$('.preloader').addClass('deleting')},7000)
         
          
     },1000)
@@ -79,8 +79,21 @@
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        //centerMode: true,
-        dots: true
+        dots: true,
+        responsive: [
+          {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1
+            }
+          },
+          {
+            breakpoint: 680,
+            settings: {
+                slidesToShow: 2
+            }   
+          }
+        ]
      });
      
      //header

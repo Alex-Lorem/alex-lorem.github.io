@@ -260,7 +260,28 @@
     .inst{
         width: 1.07rem;
         height: 1.07rem;
+        }    
     }
+    body .slider{
+        margin-top: 100px;
+        .slider__text{
+            margin-top: 50px;
+        }
+    }
+    .about{
+        .about__statistic{
+            flex-wrap: wrap;
+            max-width: 470px;
+            &::after {
+              content:'';
+              width:100%;
+              order:0;
+                }
+            .static__item{
+                &:nth-child(3){order: 1; margin-top: 25px;}
+                &:nth-child(4){order: 1; margin-top: 25px;}
+            }
+        }
     }
 }
 @media(max-width:720px){
@@ -270,11 +291,15 @@
         .img--wrapper img{
             width: 100%;
         }
+        .video{
+                margin: 0;
+            }
         .first__content{
             padding: 0 20px;
             margin-top: 75px;
             margin-right: 0;
             align-items: center;
+            
             h1{
                 text-align: center;
             }
@@ -292,7 +317,7 @@
             .features__item{
                 width: 280px;
                 margin: 0;
-                margin-top: 50px;
+                margin-top: 70px;
                 .features__subtitle{
                     margin: 15px 30px;
                 }
@@ -319,6 +344,11 @@
 }//media 720
 @media(max-width:680px){
     body{
+        .first{
+            .circle{
+                right: -80%;
+            }
+        }
          header{
             display: none;
         }
@@ -328,12 +358,53 @@
          .adaptive__title{
             display: block;
         }
+        .features{
+            .subtitle{
+                max-width: 360px;
+                margin: 10px 15px;
+            }
+        }
          footer{
-            display: none;
+             .footer__content{
+                 display: flex;
+                 flex-direction: column-reverse;
+                 align-items: center;
+                 .button-link{
+                     order: 2;
+                     margin-top: 20px;
+                 }
+                 div{
+                     display: none;
+                     &:nth-child(1){
+                         margin-top: 20px;
+                         display: block;
+                     }   
+                 }
+                 input{
+                     height: 55px;
+                     order: 3;
+                 }
+                 .footer__wrapper__svg{
+                      margin-top: 20px;
+                      display: flex;   
+                 }
+             }
         }
         .slider{
             .slider__item{
                 height: 360px;
+            }
+        }
+        .reviews{
+            margin-top: 50px;
+            .reviews__item{
+                margin: auto;
+            }
+        }
+        .app{
+            margin-top: 90px;
+            .app__content{
+                padding-top: 40px;
             }
         }
         .menu{
@@ -356,11 +427,65 @@
             grid-template-columns: repeat(var(--col), 270px);
             
             }
+        .explore .explore__flex--wrapper{
+            margin: 0 auto;
+            margin-top: 90px;
+            max-width: 500px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            &::after {
+              content:'';
+              width:100%;
+              order:0;
+                }
+            .explore__item{
+                width: 200px;
+                height: 220px;    
+                margin-top: 50px;
+            &:nth-child(3){order: 1;}
+            &:nth-child(4){order: 1;}
+                }
+            }
+        }
+        .order{
+            .order__container{
+                flex-direction: column;
+
+                h2{
+                    text-align: center;
+                }
+                    .subtitle{
+                    font-size: 1.4rem;
+                        margin: 25px 0;
+                }
+            }
         }
     }
 }//media 680
 
 @media(max-width:550px){
+    body{
+        .first{
+            .circle {
+                right: -115%;
+            }
+        }
+        .about{
+            .about__right{
+                padding-top: 0;
+            }
+        }
+        footer{
+            .footer__terms{
+                justify-content: center;
+                a{display: none;}
+                .copyright{
+                    position: initial;
+                    text-align: center;
+                }
+            }
+        }
+    }
     .menu{
         .menu__wrapper{
             justify-items: center;
@@ -381,10 +506,111 @@
             width: 270px;
             height: 340px;
         }
+        
     }
 }
 
-
+@include phones{
+    .reviews__item{
+        margin: auto;
+    }
+    body{
+        h1{
+            font-size: 3.5rem;
+        }
+        .subtitle{
+            max-width: 350px;
+        }
+        .about{
+            .about__statistic{
+                margin-top: 100px;
+                margin-bottom: 75px;
+                flex-direction: column;
+                align-items: center;
+                .static__item{
+                    margin-top: 35px;
+                }
+            }
+        }
+        .menu{
+        .explore{
+            .explore__flex--wrapper{
+                max-width: 28.5rem;
+                .explore__item{
+                    width: 45%;
+                }
+            }
+            }
+        }
+        .app{
+            .app__container{
+                padding: 0;
+            }
+            .app__content{
+                padding: 25px 15px;
+            }
+            .img--wrapper{
+                top: 0;
+            }
+        }
+    }
+    
+     .footer__content{
+        .fb{
+            width: 0.642rem;
+            height: 1.142rem;
+            }
+        .tw{
+            width: 1.142rem;
+            height: 0.928rem;
+            }
+        .inst{
+            width: 1.142rem;
+            height: 1.142rem;
+     
+            }
+        }
+    }//media phones
+@media(max-width:400px){
+    body .first .circle{
+        right: -150%;
+    }
+}
+@media(max-width:330px){
+    body .first .circle{
+        right: -180%;
+    }
+    .first{
+        .video{
+            .play{
+                width: 130px;
+                height: 130px;    
+                left: 29%;
+                top: 33%;
+            }
+        }
+    }
+    body{
+        h2{
+            font-size: 3rem;
+        }
+        .subtitle{
+            margin: 0 20px;
+        }
+        .app{
+            .app__content{
+                .app__buttons{
+                    flex-direction: column;
+                    max-width: none;
+                    align-items: center;
+                    .button-link{
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 

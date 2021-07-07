@@ -102,18 +102,50 @@
 .berry{
     width: 43px;
     height: 52px;
+    @include tablets{
+        width: 2.866rem;
+        height: 3.466rem ;
+    }
+    @include phones{
+        width: 3.07rem ;
+        height: 3.714rem;
+    }
 }
 .dinner{
     width: 52px;
     height: 52px;
+    @include tablets{
+        width: 3.466rem;
+        height: 3.466rem;
+    }
+    @include phones{
+        width: 3.714rem;
+        height: 3.714rem;
+    }
 }
 .bake{
     width: 44px;
     height: 52px;
+    @include tablets{
+        width: 2.93rem;
+        height: 3.466rem;
+    }
+    @include phones{
+        width: 3.142rem;
+        height: 3.714rem;
+    }
 }
 .drink{
     width: 48px;
     height: 52px;
+    @include tablets{
+        width: 3.2rem;
+        height: 3.466rem;
+    }
+    @include phones{
+        width: 3.428rem;
+        height: 3.714rem;
+    }
 }
 .explore{
     margin-top: 100px;
@@ -121,6 +153,8 @@
     width: 100%;
     .subtitle{
         margin: 0 auto;
+        font-size: 20px;
+        
     }
 }
 .explore__flex--wrapper{
