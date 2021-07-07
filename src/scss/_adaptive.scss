@@ -246,6 +246,14 @@
 }//media 850
 
 @include tablets{
+    .slider{
+        .slider__text{
+            .arrow{
+                width:0.8rem;
+                height:1.06rem;
+            }
+        }
+    }
     .footer__content{
     .fb{
         width: 0.6rem;
@@ -485,7 +493,7 @@
                 }
             }
         }
-    }
+    
     .menu{
         .menu__wrapper{
             justify-items: center;
@@ -508,9 +516,18 @@
         }
         
     }
+    }
 }
 
 @include phones{
+    .slider{
+        .slider__text{
+            .arrow{
+                width:0.857rem;
+                height:1.14rem;
+            }
+        }
+    }
     .reviews__item{
         margin: auto;
     }

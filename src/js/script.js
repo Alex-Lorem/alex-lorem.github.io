@@ -3,7 +3,8 @@
      //preloader
      
      let preloader = $('.preloader');
-     
+     let root = document.getElementsByTagName('html')[0];
+     root.classList.add('overflow-disactive');
      window.setTimeout(function () {
          
          window.setTimeout(function () {$('.preloader__item-1').addClass('item--active')})
@@ -13,7 +14,7 @@
          window.setTimeout(function () {$('.preloader__item-5').addClass('item--active')},2100)
          window.setTimeout(function () {$('.preloader__item-6').addClass('item--active')},2600)
          window.setTimeout(function () {$('.preloader__item-7').addClass('item--active')},3100)
-         window.setTimeout(function () {$('.preloader').addClass('disactivating')},4500)
+         window.setTimeout(function () {$('.preloader').addClass('disactivating');root.classList.remove('overflow-disactive')},4500)
          window.setTimeout(function () {$('.preloader').addClass('deleting')},7000)
         
          
@@ -152,7 +153,7 @@
      let menuHeightDefault = menuItemHeight + shadow;
      
      if(window_Width < 550){
-         gap= 30;
+         gap= 40;
          columns = 1;
      }
      if(window_Width > 550 && window_Width < 950){
@@ -282,13 +283,15 @@
      $('#contact').click(e=>{
          e.preventDefault();
          $('.contact__overlay').addClass('contact__overlay--active');
+         root.classList.add('overflow-disactive');
      })
      
      $('.contact__close').click(e=>{
         e.preventDefault();
         $('.contact__overlay').addClass('contact__overlay--disappearence');
         window.setTimeout(function () {
-        $('.contact__overlay').removeClass('contact__overlay--disappearence');    
+        $('.contact__overlay').removeClass('contact__overlay--disappearence');
+        root.classList.remove('overflow-disactive');
         $('.contact__overlay').removeClass('contact__overlay--active');
         },2000)
          
@@ -302,16 +305,18 @@
          if($('#burger').hasClass('burger--active')){
              $('#burger').addClass('burger--disactive');
              $('#overlay').addClass('overlay--disactive');
+             root.classList.remove('overflow-disactive');
              window.setTimeout(function () {
 
               $('#burger').removeClass('burger--active');  
               $('#burger').removeClass('burger--disactive');  
               $('#overlay').removeClass('overlay--disactive');  
-              $('#overlay').removeClass('overlay--active');  
+              $('#overlay').removeClass('overlay--active');
+                
          },1100)
          }
          else{
-             
+         root.classList.add('overflow-disactive');    
          $('#burger').addClass('burger--active');
          $('#overlay').addClass('overlay--active')
          

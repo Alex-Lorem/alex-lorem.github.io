@@ -57,6 +57,7 @@
     border-radius: 50%;
     transition: all .5s ease;
     &:hover{
+        transition: all 2s ease;
         background: #5DC4B8;
         .arrow{
             fill:#FFDDD4;

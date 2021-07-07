@@ -21,7 +21,7 @@ html{
         font-size: $baseFont - 2px; 
     }
 }
-.overflow-disactive{overflow-y: scroll;}
+.overflow-disactive{overflow-y: hidden;}
 .body{
         overflow: hidden;
 }
