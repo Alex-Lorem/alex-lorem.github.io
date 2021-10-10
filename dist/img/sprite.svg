@@ -53,4 +53,18 @@
     <path d="M47.5 24C47.5 36.9787 36.9787 47.5 24 47.5C11.0213 47.5 0.5 36.9787 0.5 24C0.5 11.0213 11.0213 0.5 24 0.5C36.9787 0.5 47.5 11.0213 47.5 24Z" stroke="#5DC4B8" stroke-opacity="0.500198"/>
     <path fill-rule="evenodd" clip-rule="evenodd" d="M14 16H34V18H14V16ZM14 23H34V25H14V23ZM34 30H14V32H34V30Z" fill="#5DC4B8"/>    
     </symbol>
+    <symbol
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            id="cross"
+    >
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+    </symbol>
 </svg>
