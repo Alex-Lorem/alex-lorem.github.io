@@ -7,7 +7,7 @@ sass.compiler = require('node-sass');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
-const sassGlob = require('gulp-sass-glob'); // это херня 
+const sassGlob = require('gulp-sass-glob'); // это херня
 const autoprefixer = require('gulp-autoprefixer');
 const px2rem = require('gulp-px2rem-converter');
 
@@ -19,7 +19,7 @@ const uglify = require('gulp-uglify');
 const {SRC_PATH, DIST_PATH, FONTS_PATH, IMG_PATH, STYLE_LIBS, JS_LIBS} = require('./gulp.config');
 const gulpif = require('gulp-if');
 
-const env = process.env.NODE_ENV; 
+const env = process.env.NODE_ENV;
 
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require("gulp-imagemin");
@@ -28,8 +28,8 @@ const webp = require("imagemin-webp");
 
 
 
-task("img-convert", function() {
-  const stream = 
+task('img-convert', function() {
+  const stream =
     src('src/img/*.png','src/img/*.jpg','src/img/*.jpeg')
     .pipe(
       imagemin({
@@ -111,13 +111,13 @@ task(
 
 
 task(
-    'server', 
+    'server',
     () => {
     browserSync.init({
         server: {
             baseDir: "./dist"
         }
-        
+
     });
 });
 task(

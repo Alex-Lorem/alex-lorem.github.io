@@ -10,12 +10,13 @@
     width: 85%;
     height: 590px;
     background: linear-gradient(135deg, #FCEEE9 0%, #ECF8F8 100%);
+    box-shadow: 0rem 1.5rem 3rem rgb(0, 24, 52 / 8%);
     border-radius: 100px 0px 0px 24px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-right: 50px;
-    
+
 }
 .slider__text{
     max-width: 260px;
@@ -40,7 +41,7 @@
     border-radius: 100px 24px 24px 24px;
     overflow: hidden;
     img{
-        object-fit:cover; 
+        object-fit:cover;
     }
 }
 .arrow{
