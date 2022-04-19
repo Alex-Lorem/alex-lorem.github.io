@@ -24,23 +24,18 @@ const env = process.env.NODE_ENV;
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require("gulp-imagemin");
 const extReplace = require("gulp-ext-replace");
-const webp = require("imagemin-webp");
+const webp = require("gulp-webp");
 
 
 
-task('img-convert', function() {
-  const stream =
-    src('src/img/*.png','src/img/*.jpg','src/img/*.jpeg')
-    .pipe(
-      imagemin({
-        verbose: true,
-        plugins: webp({ quality: 92 })
-      })
-    )
-    .pipe(extReplace(".webp"))
-    .pipe(dest("./dist/img"));
-  return stream;
-});
+
+task('img-convert',
+    () => {
+        return src(['src/img/*','!src/img/*.svg'])
+            .pipe(webp({quality: 80}))
+            .pipe(dest("./dist/img"));
+    }
+);
 
 task(
     'clean',
@@ -134,7 +129,7 @@ task(
 task('build',
  series(
    'clean',
-   parallel('copy:html', "copy:svg", 'copy:img', "copy:fonts", 'styles', 'copy:php', 'scripts'), parallel("server"))
+   parallel('copy:html', "copy:svg", 'img-convert','copy:img', "copy:fonts", 'styles', 'copy:php', 'scripts'), parallel("server"))
 );
 
-task("default", series("clean", parallel("copy:html", "copy:svg", "copy:img", "copy:fonts", "styles", 'copy:php',"scripts"), parallel('watch',"server")));
+task("default", series("clean", parallel("copy:html", "copy:svg", 'img-convert', "copy:img", "copy:fonts", "styles", 'copy:php',"scripts"), parallel('watch',"server")));

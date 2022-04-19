@@ -1,26 +1,68 @@
  window.onload = function () {
      let window_Width = window.innerWidth ? window.innerWidth : $(window).width();
      //preloader
-
-     let preloader = $('.preloader');
+     const preloaderOnce = localStorage.getItem('preloader')
      let root = document.getElementsByTagName('html')[0];
-     root.classList.add('overflow-disactive');
-     window.setTimeout(function () {
+     if(!preloaderOnce) {
+         let preloader = $('.preloader');
+         preloader.addClass('active');
+         let root = document.getElementsByTagName('html')[0];
+         root.classList.add('overflow-disactive');
+         window.setTimeout(function () {
 
-         window.setTimeout(function () {$('.preloader__item-1').addClass('item--active')})
-         window.setTimeout(function () {$('.preloader__item-2').addClass('item--active')},300)
-         window.setTimeout(function () {$('.preloader__item-3').addClass('item--active')},700)
-         window.setTimeout(function () {$('.preloader__item-4').addClass('item--active')},1200)
-         window.setTimeout(function () {$('.preloader__item-5').addClass('item--active')},1500)
-         window.setTimeout(function () {$('.preloader__item-6').addClass('item--active')},1900)
-         window.setTimeout(function () {$('.preloader__item-7').addClass('item--active')},2300)
-         window.setTimeout(function () {$('.preloader').addClass('disactivating');
-             root.classList.remove('overflow-disactive')},3000)
-         window.setTimeout(function () {$('.preloader').addClass('deleting')},4500)
+             window.setTimeout(function () {
+                 $('.preloader__item-1').addClass('item--active')
+             })
+             window.setTimeout(function () {
+                 $('.preloader__item-2').addClass('item--active')
+             }, 500)
+             window.setTimeout(function () {
+                 $('.preloader__item-3').addClass('item--active')
+             }, 1000)
+             window.setTimeout(function () {
+                 $('.preloader__item-4').addClass('item--active')
+             }, 1500)
+             window.setTimeout(function () {
+                 $('.preloader__item-5').addClass('item--active')
+             }, 2000)
+             window.setTimeout(function () {
+                 $('.preloader__item-6').addClass('item--active')
+             }, 2300)
+             window.setTimeout(function () {
+                 $('.preloader__item-7').addClass('item--active')
+             }, 2800)
+             window.setTimeout(function () {
+                 $('.preloader').addClass('disactivating');
+                 root.classList.remove('overflow-disactive')
+             }, 3200)
+             window.setTimeout(function () {
+                 $('.preloader').addClass('deleting')
+             }, 4500)
 
 
-    },500)
+         }, 500)
+        localStorage.setItem('preloader', 'true')
+     }
 
+    //video
+
+
+
+         const iframe = document.querySelector('iframe');
+         iframe.classList.add('iframe-disactive');
+         const player = new Vimeo.Player(iframe);
+         //player.pause();
+         //video play
+
+         $('.play').click(function (e) {
+             e.preventDefault()
+             $('.x-player-wrapper').addClass('play-active')
+             // player.play();
+         })
+         $('.x-player-background').click(function () {
+             $('.x-player-wrapper').removeClass('play-active')
+             player.pause();
+         })
 
 
      //menu stars mark
@@ -108,37 +150,6 @@
     }
      });
 
-     //buttons which go to different sections on the site
-     //variables:
-     let headerHeight = document.getElementById('header').scrollHeight;
-     let firstHeight = document.querySelector('.first').scrollHeight;
-     let featuresHeight = document.querySelector('.features').scrollHeight;
-     let aboutHeight = document.querySelector('.about').scrollHeight;
-     let menuHeight = document.querySelector('.menu').scrollHeight;
-     let sliderHeight = document.querySelector('.slider').scrollHeight;
-     let reviewsHeight = document.querySelector('.reviews').scrollHeight;
-
-     let sliderMargin = parseInt($('.slider').css('margin-top'));
-     let reviewsMargin = parseInt($('.reviews').css('margin-top'));
-
-
-     //first to menu
-     $('.to-menu').click(e =>{
-         e.preventDefault();
-         $('html,body').animate({scrollTop:firstHeight + featuresHeight + aboutHeight - headerHeight - 20},1000);
-     });
-     $('.to-about').click(e =>{
-        e.preventDefault();
-        $('html,body').animate({scrollTop:firstHeight + featuresHeight},1000);
-     });
-     $('.to-app').click(e =>{
-        e.preventDefault();
-        $('html,body').animate({scrollTop:firstHeight + featuresHeight + aboutHeight + menuHeight + sliderHeight + reviewsHeight + sliderMargin + reviewsMargin},1000);
-     });
-     $('.to-gallery').click(e =>{
-        e.preventDefault();
-        $('html,body').animate({scrollTop:firstHeight + featuresHeight + aboutHeight + menuHeight},1000);
-     });
 
 
      //show full menu
@@ -303,7 +314,6 @@
          if($('#burger').hasClass('burger--active')){
              $('#burger').addClass('burger--disactive');
              $('#overlay').addClass('overlay--disactive');
-             root.classList.remove('overflow-disactive');
              window.setTimeout(function () {
 
               $('#burger').removeClass('burger--active');
@@ -314,7 +324,6 @@
          },1100)
          }
          else{
-         root.classList.add('overflow-disactive');
          $('#burger').addClass('burger--active');
          $('#overlay').addClass('overlay--active')
 
@@ -322,8 +331,49 @@
             }
 
      });
+     //buttons which go to different sections on the site
+     //variables:
+     let headerHeight = document.getElementById('header').scrollHeight;
+     let firstHeight = document.querySelector('.first').scrollHeight;
+     let featuresHeight = document.querySelector('.features').scrollHeight;
+     let aboutHeight = document.querySelector('.about').scrollHeight;
+     let menuHeight = document.querySelector('.menu').scrollHeight;
+     let sliderHeight = document.querySelector('.slider').scrollHeight;
+     let reviewsHeight = document.querySelector('.reviews').scrollHeight;
+     let mapHeight = document.querySelector('.map').scrollHeight;
+     let appHeight = document.querySelector('.app').scrollHeight;
+     let sliderMargin = parseInt($('.slider').css('margin-top'));
+     let reviewsMargin = parseInt($('.reviews').css('margin-top'));
+     let appMargin = parseInt($('.app').css('margin-top'));
 
-}//даже не думай
+     //first to menu
+     $('.header__title').click(e =>{
+         e.preventDefault();
+         $('html,body').animate({scrollTop:0}, 500);
+     });
+     $('.to-menu').click(e =>{
+         e.preventDefault();
+         $('html,body').animate({scrollTop:firstHeight + featuresHeight + aboutHeight - headerHeight - 20},1000);
+     });
+     $('.to-about').click(e =>{
+         e.preventDefault();
+         $('html,body').animate({scrollTop:firstHeight + featuresHeight},1000);
+     });
+     $('.to-app').click(e =>{
+         e.preventDefault();
+         $('html,body').animate({scrollTop:firstHeight + featuresHeight + aboutHeight + menuHeight + sliderHeight + reviewsHeight + sliderMargin + reviewsMargin},1000);
+     });
+     $('.to-gallery').click(e =>{
+         e.preventDefault();
+         $('html,body').animate({scrollTop:firstHeight + featuresHeight + aboutHeight + menuHeight},1000);
+     });
+     $('.to-contacts').click(e =>{
+         e.preventDefault();
+         $('html,body').animate({scrollTop:firstHeight + featuresHeight +  appMargin + aboutHeight + menuHeight + sliderHeight + reviewsHeight + sliderMargin + reviewsMargin + mapHeight + appHeight},1000);
+     });
+
+
+ }//даже не думай
 
 
 

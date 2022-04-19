@@ -33,17 +33,17 @@ nav{
     padding-right: calc(95% - 600px);
     a{
         margin-top: 20px;
-        display: flex; 
+        display: flex;
         align-items: center;
         position: relative;
-        
+
         &:hover{
             &::before{
                 transition: all 5s ease;
                 animation: underline .4s ease;
                 animation-fill-mode: forwards;
             }
-        } 
+        }
     }
     a::before{
         content: "";
@@ -60,9 +60,10 @@ nav{
             100%{width: 100%;}
         }
 .header__title{
+    cursor: pointer;
     text-transform: uppercase;
     font-size: 40px;
-    font-family: 'Elsie-Black';
-    line-height: 48px; 
+    font-family: 'Elsie-Black', sans-serif;
+    line-height: 48px;
     margin-top: 16px;
 }

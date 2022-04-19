@@ -4,13 +4,14 @@
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
-    
     z-index: 10000;
     background: #fff;
-    
+}
+.active{
+    display: flex;
 }
 .preloader__content{
     display: flex;
@@ -23,7 +24,7 @@
 .disactivating{
     animation: disactivating 1.5s ease;
     animation-fill-mode: forwards;
-    
+
     @keyframes disactivating{
         0%{opacity: 1}
         100%{opacity: 0}
@@ -39,13 +40,13 @@
     &:nth-child(7){font-weight: bold;}
 }
 .item--active{
-    
+
     animation: appearance .5s ease;
     animation-fill-mode: forwards;
     @keyframes appearance{
         0%{opacity: 0;}
         100%{opacity: 1;}
-    } 
+    }
 }
 .deleting{
     display: none;
