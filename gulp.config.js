@@ -4,10 +4,10 @@ module.exports = {
  IMG_PATH : 'src/img/**',
  FONTS_PATH : 'src/fonts/**',
  STYLE_LIBS : [
-   "src/scss/*.scss"  
+   "src/scss/*.scss"
  ],
  JS_LIBS : [
-    "node_modules/jquery/dist/jquery.js",
+     "node_modules/jquery/dist/jquery.min.js",
     "src/js/*.js"
  ]
 }

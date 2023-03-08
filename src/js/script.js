@@ -1,8 +1,13 @@
- window.onload = function () {
+window.onload = function () {
+
+    let $ = require('jquery');
+    let AOS = require('aos')
+    require('./slick')
+
      let window_Width = window.innerWidth ? window.innerWidth : $(window).width();
      //preloader
      const preloaderOnce = localStorage.getItem('preloader')
-     let root = document.getElementsByTagName('html')[0];
+
      if(!preloaderOnce) {
          let preloader = $('.preloader');
          preloader.addClass('active');
@@ -228,7 +233,7 @@
 
                 number += 10;
                 document.getElementById('velocity').textContent = number;
-                if (number == 2020){
+                if (number === 2020){
                     clearInterval(t);
                     }
         },5)
@@ -239,7 +244,7 @@
     let t = setInterval(function() {
                 number += 1;
                 document.getElementById('employees').textContent = number + '+';
-                if (number == 45){
+                if (number === 45){
                     clearInterval(t);
                     }
         },30)
@@ -250,7 +255,7 @@
     let t = setInterval(function() {
                 number += 10;
                 document.getElementById('orders').textContent = number ;
-                if (number == 1000){
+                if (number === 1000){
                     clearInterval(t);
                     }
         },20)
@@ -261,7 +266,7 @@
     let t = setInterval(function() {
                 number += 1;
                 document.getElementById('products').textContent = number;
-                if (number == 89){
+                if (number === 89){
                     clearInterval(t);
                     }
         },30)
@@ -270,10 +275,10 @@
 
 
 
-     var target_1 = document.getElementById('target-1');
-     var target_2 = document.getElementById('target-2');
-     var target_3 = document.getElementById('target-3');
-     var target_4 = document.getElementById('target-4');
+     let target_1 = document.getElementById('target-1');
+     let target_2 = document.getElementById('target-2');
+     let target_3 = document.getElementById('target-3');
+     let target_4 = document.getElementById('target-4');
 
 
      const observer_1 = new MutationObserver(callback_1);

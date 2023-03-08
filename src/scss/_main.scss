@@ -1,7 +1,7 @@
 
 
 *{
-    margin: 0; 
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
@@ -13,12 +13,12 @@ html{
     color: $baseColor;
     overflow-x: hidden;
     overflow-y: scroll;
-    
+
     @include tablets{
         font-size: $baseFont - 1px;
-    }    
+    }
     @include phones{
-        font-size: $baseFont - 2px; 
+        font-size: $baseFont - 2px;
     }
 }
 .overflow-disactive{overflow-y: hidden;}
@@ -26,7 +26,8 @@ html{
         overflow: hidden;
 }
 .wrapper{
-     overflow: hidden;
+    overflow: hidden;
+    position: relative;
 }
 img{
     width: 100%;
