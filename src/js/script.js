@@ -1,3 +1,47 @@
+const preloaderOnce = localStorage.getItem('preloader')
+
+if(!preloaderOnce) {
+    let preloader = $('.preloader');
+    preloader.addClass('active');
+    let root = document.getElementsByTagName('html')[0];
+    root.classList.add('overflow-disactive');
+    window.setTimeout(function () {
+
+        window.setTimeout(function () {
+            $('.preloader__item-1').addClass('item--active')
+        })
+        window.setTimeout(function () {
+            $('.preloader__item-2').addClass('item--active')
+        }, 500)
+        window.setTimeout(function () {
+            $('.preloader__item-3').addClass('item--active')
+        }, 1000)
+        window.setTimeout(function () {
+            $('.preloader__item-4').addClass('item--active')
+        }, 1500)
+        window.setTimeout(function () {
+            $('.preloader__item-5').addClass('item--active')
+        }, 2000)
+        window.setTimeout(function () {
+            $('.preloader__item-6').addClass('item--active')
+        }, 2300)
+        window.setTimeout(function () {
+            $('.preloader__item-7').addClass('item--active')
+        }, 2800)
+        window.setTimeout(function () {
+            $('.preloader').addClass('disactivating');
+            root.classList.remove('overflow-disactive')
+        }, 3200)
+        window.setTimeout(function () {
+            $('.preloader').addClass('deleting')
+        }, 4500)
+
+
+    }, 500)
+    localStorage.setItem('preloader', 'true')
+}
+
+
 window.onload = function () {
 
     let $ = require('jquery');
@@ -6,48 +50,7 @@ window.onload = function () {
 
      let window_Width = window.innerWidth ? window.innerWidth : $(window).width();
      //preloader
-     const preloaderOnce = localStorage.getItem('preloader')
 
-     if(!preloaderOnce) {
-         let preloader = $('.preloader');
-         preloader.addClass('active');
-         let root = document.getElementsByTagName('html')[0];
-         root.classList.add('overflow-disactive');
-         window.setTimeout(function () {
-
-             window.setTimeout(function () {
-                 $('.preloader__item-1').addClass('item--active')
-             })
-             window.setTimeout(function () {
-                 $('.preloader__item-2').addClass('item--active')
-             }, 500)
-             window.setTimeout(function () {
-                 $('.preloader__item-3').addClass('item--active')
-             }, 1000)
-             window.setTimeout(function () {
-                 $('.preloader__item-4').addClass('item--active')
-             }, 1500)
-             window.setTimeout(function () {
-                 $('.preloader__item-5').addClass('item--active')
-             }, 2000)
-             window.setTimeout(function () {
-                 $('.preloader__item-6').addClass('item--active')
-             }, 2300)
-             window.setTimeout(function () {
-                 $('.preloader__item-7').addClass('item--active')
-             }, 2800)
-             window.setTimeout(function () {
-                 $('.preloader').addClass('disactivating');
-                 root.classList.remove('overflow-disactive')
-             }, 3200)
-             window.setTimeout(function () {
-                 $('.preloader').addClass('deleting')
-             }, 4500)
-
-
-         }, 500)
-        localStorage.setItem('preloader', 'true')
-     }
 
     //video
 
