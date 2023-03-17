@@ -1,3 +1,7 @@
+let $ = require('jquery');
+let AOS = require('aos')
+require('./slick')
+
 const preloaderOnce = localStorage.getItem('preloader')
 
 if(!preloaderOnce) {
@@ -44,9 +48,7 @@ if(!preloaderOnce) {
 
 window.onload = function () {
 
-    let $ = require('jquery');
-    let AOS = require('aos')
-    require('./slick')
+
 
      let window_Width = window.innerWidth ? window.innerWidth : $(window).width();
      //preloader
